@@ -124,7 +124,7 @@ function Start-ConfigureVMSwitch {
                 if($netType -eq "ovs") {
                     $status = (Get-Service -Name $OVS_VSWITCHD_SERVICE_NAME).Status
                     if($status -eq [System.ServiceProcess.ServiceControllerStatus]::Running) {
-                        Restart-Service $OVS_VSWITCHD_SERVICE_NAME
+                        Restart-Service $OVS_VSWITCHD_SERVICE_NAME -Force
                     }
                 }
             }
